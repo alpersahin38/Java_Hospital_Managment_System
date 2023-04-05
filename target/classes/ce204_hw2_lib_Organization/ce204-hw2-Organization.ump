@@ -1,0 +1,250 @@
+class Person
+{
+  title;
+  givenName;
+  middleName;
+  familyName;
+  FullName name;
+  Date birthDate;
+  Gender gender;
+  Address homeAddress;
+  Phone phone;
+  enum Gender { Male, Female};
+}
+
+class Hospital
+{
+  name;
+  Address homeAddress;
+  Phone phone;
+1 <@>- * Department;
+    * -- * Person;
+}
+
+class Patient
+{
+  id;
+  FullName name;
+  Gender gender;
+  Date birthDate;
+  Integer age;
+  Date accepted;
+  History sickness;
+  String[] prescriptions;
+  String[] allergies;
+  String[] specialReqs;
+  
+  
+  isA Person;
+}
+
+class Department
+{
+  1 <@>- * Staff ;
+}
+
+class Staff
+{
+  Date joined;
+  String[] education;
+  String[] certification;
+  String[] languages;
+isA Person;
+}
+
+class Doctor
+{
+  String[] specialty;
+  String[] locations;
+  isA OperationsStaff;
+}
+
+class Nurse
+{
+  isA OperationsStaff;
+}
+
+class FrontDeskStaff
+{
+  isA AdministrativeStaff;
+}
+
+class Surgeon
+{
+  isA Doctor;
+}
+
+class Technician
+{
+  isA TechnicalStaff;
+}
+
+class TechnicalStaff
+{
+  isA Staff;
+}
+
+class SurgicalTechnologist
+{
+  isA Technologist;
+}
+
+class Technologist
+{
+  isA TechnicalStaff;
+}
+
+class Receptionist
+{
+  isA FrontDeskStaff;
+}
+
+class AdministrativeStaff 
+{
+  isA Staff;
+}
+
+class OperationsStaff 
+{
+  isA Staff;
+  * -- * Patient;
+}
+
+class Address
+{
+  street;
+  city;
+  state;
+  zipCode;
+  country;
+}
+
+class History
+{
+  diagnosis;
+  treatment;
+  notes;
+  Date date;
+}
+
+class Phone
+{
+  countryCode;
+  areaCode;
+  number;
+}
+
+class FullName
+{
+  title;
+  givenName;
+  middleName;
+  familyName;
+}
+
+
+//$?[End_of_model]$?
+
+namespace -;
+
+
+class Person
+{
+  position 50 30 109 45;
+}
+
+class Hospital
+{
+  position 50 130 109 45;
+  position.association Department__Hospital 9,91 30,0;
+}
+
+class Patient
+{
+  position 50 230 109 45;
+}
+
+class Department
+{
+  position 50 330 109 45;
+}
+
+class Staff
+{
+  position 50 430 109 45;
+}
+
+class Doctor
+{
+  position 250 30 109 45;
+}
+
+class Nurse
+{
+  position 250 130 109 45;
+}
+
+class FrontDeskStaff
+{
+  position 250 230 109 45;
+}
+
+class Surgeon
+{
+  position 250 330 109 45;
+}
+
+class Technician
+{
+  position 250 430 109 45;
+}
+
+class TechnicalStaff
+{
+  position 450 30 109 45;
+}
+
+class SurgicalTechnologist
+{
+  position 450 130 109 45;
+}
+
+class Technologist
+{
+  position 450 230 109 45;
+}
+
+class Receptionist
+{
+  position 450 330 109 45;
+}
+
+class AdministrativeStaff
+{
+  position 450 430 109 45;
+}
+
+class OperationsStaff
+{
+  position 650 30 109 45;
+}
+
+class Address
+{
+  position 650 130 109 45;
+}
+
+class History
+{
+  position 650 230 109 45;
+}
+
+class Phone
+{
+  position 650 330 109 45;
+}
+
+class FullName
+{
+  position 650 430 109 45;
+}
