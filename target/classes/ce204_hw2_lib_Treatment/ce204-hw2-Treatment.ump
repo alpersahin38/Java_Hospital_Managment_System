@@ -1,0 +1,116 @@
+class Patient
+{
+  
+  1 -- * Treatment;
+  1 -- * Presscription;
+}
+
+class Doctor
+{
+  * -- * Diagnosis;
+  * -- * Presscription;
+  * -- * Patient;
+  * -- * Treatment;
+  1 -- * Examination;
+}
+
+class Examination
+{
+  
+  * -- 1 Patient;
+}
+
+class Diagnosis
+{
+  
+  * -- * Examination;
+  * -- 1 Patient;
+  * -- * Presscription ;
+  * -- * Treatment ;
+}
+
+
+class Presscription
+{
+  
+  1 -- * Therapy;
+}
+
+class Treatment
+{
+  
+}
+
+class Therapy
+{
+  
+  isA Treatment;
+}
+
+class Surgery
+{
+  
+  isA Treatment;
+}//$?[End_of_model]$?
+
+namespace -;
+
+
+class Patient
+{
+  position 50 30 109 45;
+  position.association Patient__Treatment 43,21 5,0;
+  position.association Patient__Presscription 4,41 65,0;
+}
+
+class Doctor
+{
+  position 343 30 109 41.3594;
+  position.association Doctor__Patient 0,7 110,32;
+  position.association Doctor__Treatment 109,36 54,0;
+  position.association Doctor__Examination 8,41 86,0;
+  position.association Diagnosis:owns__Doctor 0,10 110,0;
+  position.association Diagnosis:make__Doctor 68,41 109,0;
+  position.association Doctor__Presscription:write 46,41 110,0;
+  position.association Diagnosis__Doctor 0,10 110,0;
+  position.association Doctor__Presscription 0,10 110,7;
+}
+
+class Examination
+{
+  position 198 136 109 41.3594;
+  position.association Examination__Patient 12,0 77,41;
+}
+
+class Diagnosis
+{
+  position 223 209 109 41.3594;
+  position.association Diagnosis__Examination 53,0 57,22;
+  position.association Diagnosis__Patient 17,0 69,41;
+  position.association Diagnosis__Presscription 10,41 96,0;
+  position.association Diagnosis__Presscription:resultsin 0,10 110,9;
+  position.association Diagnosis__Presscription:resultsIn 0,10 110,5;
+  position.association Diagnosis__Treatment:resultisIn 109,41 0,0;
+  position.association Diagnosis__Treatment 109,41 0,0;
+}
+
+class Presscription
+{
+  position 29 303 109 41.3594;
+  position.association Presscription__Therapy 77,41 19,0;
+}
+
+class Treatment
+{
+  position 332 349 109 41.3594;
+}
+
+class Therapy
+{
+  position 221 468 109 41.3594;
+}
+
+class Surgery
+{
+  position 485 472 109 41.3594;
+}
