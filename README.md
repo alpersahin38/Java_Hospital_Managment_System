@@ -1,4 +1,4 @@
-# ce204-hw2-alper-sahin
+# Hospital_Managment_System
 
 ![ce204_hw2_Organization](https://user-images.githubusercontent.com/93208734/230178254-993b23c9-0ec7-4961-ad0f-dbc30bcbccac.png)
 
